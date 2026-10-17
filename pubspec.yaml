@@ -1,0 +1,31 @@
+name: vestidos_banio
+description: "Catálogo de vestidos de baño con notas personales y sincronización."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  http: ^1.2.2
+  drift: ^2.34.0
+  path: ^1.9.1
+  path_provider: ^2.1.6
+  firebase_core: ^4.15.0
+  cloud_firestore: ^6.10.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+  drift_dev: ^2.34.0
+  build_runner: ^2.4.15
+
+flutter:
+  uses-material-design: true
