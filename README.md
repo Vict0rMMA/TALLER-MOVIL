@@ -1,6 +1,6 @@
 # Vestidos de baño
 
-Taller Integrador 2 + 3 · Desarrollo Móvil
+Taller Integrador 2 
 
 ## Integrantes
 
