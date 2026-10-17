@@ -57,7 +57,6 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
   }
 
   Future<void> _saveLocalNote() async {
-    // Se leen antes del await para guardar justo lo que el usuario tenía en pantalla
     final text = _noteController.text.trim();
     final priority = _priority;
 
@@ -82,7 +81,6 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
     await widget.noteRepository.saveNote(note);
     if (!mounted) return;
 
-    // Se vuelve a leer para mostrar el estado real que quedó en Drift
     final saved = await widget.noteRepository
         .getNoteForProduct(widget.product.id);
     if (!mounted) return;

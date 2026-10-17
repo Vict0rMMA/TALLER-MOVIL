@@ -10,7 +10,6 @@ class ProductNotes extends Table {
   BoolColumn get pendingSync =>
       boolean().withDefault(const Constant(true))();
 
-  // Un solo registro por producto
   @override
   Set<Column> get primaryKey => {productId};
 }

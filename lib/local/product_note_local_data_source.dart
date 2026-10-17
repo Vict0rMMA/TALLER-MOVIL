@@ -27,14 +27,12 @@ class ProductNoteLocalDataSource {
   }
 
   Future<void> saveNote(ProductNote note) async {
-    // Upsert: si ya hay nota para ese producto la reemplaza en vez de duplicarla
     await db.into(db.productNotes).insertOnConflictUpdate(
           ProductNotesCompanion.insert(
             productId: Value(note.productId),
             note: note.note,
             priority: note.priority,
             updatedAt: note.updatedAt,
-            // Cualquier cambio local vuelve a quedar pendiente de enviar
             pendingSync: const Value(true),
           ),
         );

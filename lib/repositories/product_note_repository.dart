@@ -15,8 +15,6 @@ class ProductNoteRepository {
       local.getNoteForProduct(productId);
 
   Future<void> saveNote(ProductNote note) async {
-    // Primero Drift y por fuera del try: la nota queda guardada
-    // aunque Firebase falle o no haya internet.
     await local.saveNote(note);
 
     final remoteSource = remote;
@@ -25,9 +23,7 @@ class ProductNoteRepository {
     try {
       await remoteSource.upsertNote(note);
       await local.markSynced(note.productId);
-    } catch (_) {
-      // La nota ya quedó local con pendingSync = true
-    }
+    } catch (_) {}
   }
 
   Future<(int sent, int failed)> syncPending() async {
@@ -44,7 +40,6 @@ class ProductNoteRepository {
         await local.markSynced(note.productId);
         sent++;
       } catch (_) {
-        // Esta nota sigue pendiente para el próximo intento
         failed++;
       }
     }

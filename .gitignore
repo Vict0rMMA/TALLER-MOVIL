@@ -44,6 +44,5 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-# Material de apoyo y configuración local
 .claude/
 referencia/

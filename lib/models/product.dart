@@ -18,7 +18,6 @@ class Product {
       id: (json['id'] as num).toInt(),
       name: json['name'] as String? ?? '',
       category: json['category'] as String? ?? '',
-      // El precio puede venir como int o double en el JSON
       price: (json['price'] as num? ?? 0).toDouble(),
       image: json['image'] as String? ?? '',
     );

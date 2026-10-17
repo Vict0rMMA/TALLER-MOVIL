@@ -28,7 +28,6 @@ class ProductService {
     } on TimeoutException {
       throw const ApiException('El servidor tardó demasiado en responder');
     } catch (_) {
-      // Sin internet, DNS que no resuelve, conexión rechazada, etc.
       throw const ApiException('No hay conexión. Revisa tu internet');
     }
 

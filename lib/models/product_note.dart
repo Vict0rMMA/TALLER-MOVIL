@@ -13,7 +13,6 @@ class ProductNote {
     this.pendingSync = true,
   });
 
-  // pendingSync no se envía: solo tiene sentido en el dispositivo
   Map<String, dynamic> toJson() => {
     'product_id': productId,
     'note': note,

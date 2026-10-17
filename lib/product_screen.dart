@@ -27,8 +27,6 @@ class _ProductScreenState extends State<ProductScreen> {
   void initState() {
     super.initState();
 
-    // El Future se crea una sola vez aquí. Si se creara dentro de build,
-    // cada setState volvería a hacer la petición HTTP.
     _service = ProductService(
       'https://raw.githubusercontent.com/Vict0rMMA/TALLER-MOVIL/main/data/products.json',
     );
